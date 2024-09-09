@@ -33,7 +33,7 @@ const ControlCenter = () => {
 
     const play = () => {
       console.log(playBackState)
-      togglePlayback(playBackState)
+      togglePlayback(playBackState?.state)
     }
 
   return (
@@ -45,7 +45,7 @@ const ControlCenter = () => {
         <Pressable onPress={() => play()}>
             <Icon 
             style={styles.icon} 
-            name={playBackState === State.Playing ? "pause" : "play-arrow"} 
+            name={playBackState?.state === State.Playing ? "pause" : "play-arrow"} 
             size={75} />
         </Pressable>
         <Pressable onPress={skipToNext}>
